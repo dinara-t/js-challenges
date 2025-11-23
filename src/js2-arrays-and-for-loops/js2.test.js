@@ -108,7 +108,7 @@ xdescribe("Testing moveFirstAndLastItems()", () => {
   });
 
   it("Should return an Array ", () => {
-    expect(Array.isArray(getFirstAndLastItems(items))).toBeTruthy();
+    expect(Array.isArray(moveFirstAndLastItems(items))).toBeTruthy();
   });
 
   it("Should handle multiple inputs", () => {

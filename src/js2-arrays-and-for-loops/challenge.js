@@ -21,9 +21,9 @@
  * @return {string} "Bacon+Lettuce+Tomato"
  */
 
-export const createRecipeString = (ingredientsArr) => {
-  return;
-};
+// export const createRecipeString = (ingredientsArr) => {
+//   return ingredientsArr.join("+");
+// };
 
 /**
  * A function that takes Array of Items and returns a NEW ARRAY with the first and last item in it.
@@ -32,9 +32,9 @@ export const createRecipeString = (ingredientsArr) => {
  * @return {string[]} ["Tony","Dave"]
  */
 
-export const getFirstAndLastItems = (itemsArr) => {
-  return;
-};
+// export const getFirstAndLastItems = (itemsArr) => {
+//   return [itemsArr[0], itemsArr[itemsArr.length - 1]];
+// };
 
 /**
  * A function that takes an array of scores and totals the scores by looping through the array.
@@ -43,9 +43,13 @@ export const getFirstAndLastItems = (itemsArr) => {
  * @return {number} 6
  */
 
-export const totalScores = (scoreArr) => {
-  return;
-};
+// export const totalScores = (scoreArr) => {
+//   let total = 0;
+//   for (let i = 0; i < scoreArr.length; i++) {
+//     total += scoreArr[i];
+//   }
+//   return total;
+// };
 
 /**
  * Intermediate Challenges
@@ -59,9 +63,13 @@ export const totalScores = (scoreArr) => {
  * @return {number} 55
  */
 
-export const totalRange = (rangeMax) => {
-  return;
-};
+// export const totalRange = (rangeMax) => {
+//   let total = 0;
+//   for (let i = 0; i <= rangeMax; i++) {
+//     total += i;
+//   }
+//   return total;
+// };
 
 /**
  * A function that takes an array and returns a NEW ARRAY where the last item has been moved to the front of the array and removed from the back.
@@ -70,9 +78,12 @@ export const totalRange = (rangeMax) => {
  * @return {string[]} ["Dave","Tony","John"]
  */
 
-export const moveFirstAndLastItems = (itemsArr) => {
-  return;
-};
+// export const moveFirstAndLastItems = (itemsArr) => {
+//   const clone = [...itemsArr];
+//   const last = clone.pop();
+//   clone.unshift(last);
+//   return clone;
+// };
 
 /**
  * Read this article on how to clone an array.
@@ -88,9 +99,14 @@ export const moveFirstAndLastItems = (itemsArr) => {
  * @return {number[]} [1,1,1,1]
  */
 
-export const removeEvenNumbers = (numberArr) => {
-  return;
-};
+// export const removeEvenNumbers = (numberArr) => {
+//   const clone = [...numberArr];
+//   const result = [];
+//   for (let i = 0; i < clone.length; i++) {
+//     if (clone[i] % 2 !== 0) result.push(clone[i]);
+//   }
+//   return result;
+// };
 
 /**
  * Advanced Challenges
@@ -104,9 +120,16 @@ export const removeEvenNumbers = (numberArr) => {
  * @return {number} 2
  */
 
-export const generateAverage = (numberArr) => {
-  return;
-};
+// export const generateAverage = (numberArr) => {
+//   if (numberArr.length === 0) return 0;
+
+//   let sum = 0;
+//   for (let i = 0; i < numberArr.length; i++) {
+//     sum += numberArr[i];
+//   }
+
+//   return Math.round(sum / numberArr.length);
+// };
 
 /**
  * A function that uses a loop to reverse the order of an Array. It should return a NEW ARRAY and not Mutate the orginal array.
@@ -115,9 +138,14 @@ export const generateAverage = (numberArr) => {
  * @return {number} [3,2,1]
  */
 
-export const reverseOrder = (toReverseArr) => {
-  return;
-};
+// export const reverseOrder = (toReverseArr) => {
+//   const clone = [...toReverseArr];
+//   const out = [];
+//   for (let i = clone.length - 1; i >= 0; i--) {
+//     out.push(clone[i]);
+//   }
+//   return out;
+// };
 
 /**
  * Expert Challenges
@@ -137,9 +165,20 @@ export const reverseOrder = (toReverseArr) => {
  * @return {string[]} ["P:1 Tony scored 45","P:2 John scored 55","P:3 Dave scored 66"]
  */
 
-export const generateHighscores = (playersArr, scoresArr) => {
-  return;
-};
+// export const generateHighscores = (playersArr, scoresArr) => {
+//   if (
+//     playersArr.length === 0 ||
+//     playersArr.length !== scoresArr.length
+//   ) {
+//     return "invalid inputs";
+//   }
+
+//   const output = [];
+//   for (let i = 0; i < playersArr.length; i++) {
+//     output.push(`P:${i + 1} ${playersArr[i]} scored ${scoresArr[i]}`);
+//   }
+//   return output;
+// };
 
 /**
  * A function that takes a string and creates a simple encrypted message.
@@ -168,5 +207,22 @@ export const generateHighscores = (playersArr, scoresArr) => {
 // };
 
 export const encryptString = (toEncrypt) => {
-  return;
+  if (!toEncrypt || toEncrypt.length <= 3) {
+    return toEncrypt || "";
+  }
+
+  const list1 = [];
+  const list2 = [];
+  const list3 = [];
+
+  for (let i = 0; i < toEncrypt.length; i++) {
+    const ch = toEncrypt[i];
+    const mod = i % 3;
+
+    if (mod === 0) list1.push(ch);
+    else if (mod === 1) list2.push(ch);
+    else list3.push(ch);
+  }
+
+  return list1.join("") + list2.join("") + list3.join("");
 };
